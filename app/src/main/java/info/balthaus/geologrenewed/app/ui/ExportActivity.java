@@ -51,7 +51,7 @@ import java.util.Locale;
 
 @SuppressWarnings("deprecation")
 public class ExportActivity extends PreferenceActivity {
-    public static final String EXTRA_LOG_ID = "eu.chainfire.geolog.ProfileActivity.EXTRA.LOG_ID";
+    public static final String EXTRA_LOG_ID = "info.balthaus.geologrenewed.app.ProfileActivity.EXTRA.LOG_ID";
 
     public static final String PREF_FORMAT = "format";
     public static final String VALUE_FORMAT_GPX = "gpx";

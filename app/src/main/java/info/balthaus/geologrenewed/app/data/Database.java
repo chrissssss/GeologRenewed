@@ -151,9 +151,9 @@ public class Database {
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "geolog.db";
 
-        public static final String NOTIFY_BROADCAST = "eu.chainfire.geolog.DATABASE.UPDATED";
-        public static final String EXTRA_TABLE = "eu.chainfire.geolog.EXTRA.TABLE";
-        public static final String EXTRA_ID = "eu.chainfire.geolog.EXTRA.ID";
+        public static final String NOTIFY_BROADCAST = "info.balthaus.geologrenewed.app.DATABASE.UPDATED";
+        public static final String EXTRA_TABLE = "info.balthaus.geologrenewed.app.EXTRA.TABLE";
+        public static final String EXTRA_ID = "info.balthaus.geologrenewed.app.EXTRA.ID";
 
         private static Helper instance = null;
 

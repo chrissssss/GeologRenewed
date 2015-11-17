@@ -347,7 +347,7 @@ public class BackgroundService extends Service {
                 Debug.log(String.format(Locale.ENGLISH, "Location --> %s %ds", s, wantedLocationInterval));
 
                 //locationClient.removeLocationUpdates(locationListener);
-                LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, (com.google.android.gms.location.LocationListener) this);
+                LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, locationListener);
 
                 if ((wantedAccuracy != Accuracy.NONE) && (wantedLocationInterval > 0)) {
                     if ((lastLocationAccuracy == Accuracy.NONE) || (lastLocationInterval == 0)) isSegmentStart = true;
@@ -611,17 +611,26 @@ public class BackgroundService extends Service {
             activityIntent = PendingIntent.getService(context, 1, new Intent(context, BackgroundService.class), 0);
 //			activityClient = new ActivityRecognitionClient(context, activityConnectionCallbacks, activityConnectionFailed);
 //			activityClient.connect();
-            mGoogleApiClient = new GoogleApiClient.Builder(context).addApi(ActivityRecognition.API)
-                    .addConnectionCallbacks(activityConnectionCallbacks).addOnConnectionFailedListener(activityConnectionFailed).build();
+
+//            mGoogleApiClient = new GoogleApiClient.Builder(context)
+//                    .addApi(ActivityRecognition.API)
+//                    .addConnectionCallbacks(activityConnectionCallbacks).addOnConnectionFailedListener(activityConnectionFailed)
+//                    .build();
 
             Debug.log("Connecting LocationClient");
 //			locationClient = new LocationClient(context, locationConnectionCallbacks, locationConnectionFailed);
 //			locationClient.connect();
             mGoogleApiClient = new GoogleApiClient.Builder(context)
+                    // this is new
+                    .addApi(ActivityRecognition.API)
+                    .addConnectionCallbacks(activityConnectionCallbacks)
+                    .addOnConnectionFailedListener(activityConnectionFailed)
+                    // this belongs here
                     .addApi(LocationServices.API)
                     .addConnectionCallbacks(locationConnectionCallbacks)
                     .addOnConnectionFailedListener(locationConnectionFailed)
                     .build();
+            mGoogleApiClient.connect();
             //EOC = End Of Change
 
             Debug.log("Entering loop");

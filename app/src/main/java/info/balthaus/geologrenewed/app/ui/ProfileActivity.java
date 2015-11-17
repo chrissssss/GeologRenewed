@@ -34,7 +34,7 @@ import java.util.Locale;
 
 @SuppressWarnings("deprecation")
 public class ProfileActivity extends PreferenceActivity {
-    public static final String EXTRA_PROFILE_ID = "eu.chainfire.geolog.ProfileActivity.EXTRA.PROFILE_ID";
+    public static final String EXTRA_PROFILE_ID = "info.balthaus.geologrenewed.app.ProfileActivity.EXTRA.PROFILE_ID";
 
     public static void launchActivity(Activity activity, long id) {
         Intent i = new Intent(activity, ProfileActivity.class);

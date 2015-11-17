@@ -25,7 +25,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 public class LogsProvider extends ContentProvider {
-    public static final String AUTHORITY = "eu.chainfire.geolog.logsprovider";
+    public static final String AUTHORITY = "info.balthaus.geologrenewed.app.logsprovider";
     public static final String BASE_PATH = "locations";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
 

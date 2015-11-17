@@ -47,8 +47,8 @@ public class
     public static final String APP_COPYRIGHT = "Copyright (C) 2013 - Chainfire";
     public static final String APP_WEBSITE_URL = "http://forum.xda-developers.com/showthread.php?t=2386317";
 
-    public static final String NOTIFY_BROADCAST = "eu.chainfire.geolog.PREFERENCES.UPDATED";
-    public static final String EXTRA_KEY = "eu.chainfire.geolog.EXTRA.KEY";
+    public static final String NOTIFY_BROADCAST = "info.balthaus.geologrenewed.app.PREFERENCES.UPDATED";
+    public static final String EXTRA_KEY = "info.balthaus.geologrenewed.app.EXTRA.KEY";
 
     public static final String PREF_FOLLOW_SHOWN = "follow_shown";
     public static final String PREF_CURRENT_PROFILE = "current_profile";
