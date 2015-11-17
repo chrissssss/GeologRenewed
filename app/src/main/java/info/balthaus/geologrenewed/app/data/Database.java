@@ -59,9 +59,13 @@ public class Database {
     public static final int INTERVAL_SLOW = 10 * 60;
     public static final int INTERVAL_SLOWER = 15 * 60;
 
-    public static enum Activity {UNKNOWN, STILL, FOOT, BICYCLE, VEHICLE};
+    public static enum Activity {UNKNOWN, STILL, FOOT, BICYCLE, VEHICLE}
 
-    public static enum Accuracy {NONE, LOW, HIGH};
+    ;
+
+    public static enum Accuracy {NONE, LOW, HIGH}
+
+    ;
 
     public static Activity activityFromInt(int activity) {
         switch (activity) {

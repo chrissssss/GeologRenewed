@@ -119,7 +119,7 @@ public class
         root.addPreference(copyright);
 
 		/* maybe one day
-		if (!proPresent) {
+        if (!proPresent) {
 			Preference upgrade = new Preference(getActivity());
 			upgrade.setTitle(R.string.settings_upgrade);
 			upgrade.setSummary(R.string.settings_upgrade_description);

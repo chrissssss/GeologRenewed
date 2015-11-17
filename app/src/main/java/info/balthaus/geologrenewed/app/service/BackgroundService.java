@@ -93,7 +93,7 @@ public class BackgroundService extends Service {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             /* quick turn off, maybe ? if added, make sure to add a button to preferences to disable these buttons
-			notificationBuilder.
+            notificationBuilder.
 				setPriority(Notification.PRIORITY_MAX).
 				addAction(0, "A", notificationIntent).
 				addAction(0, "B", notificationIntent).
@@ -625,7 +625,7 @@ public class BackgroundService extends Service {
                     .addApi(ActivityRecognition.API)
                     .addConnectionCallbacks(activityConnectionCallbacks)
                     .addOnConnectionFailedListener(activityConnectionFailed)
-                    // this belongs here
+                            // this belongs here
                     .addApi(LocationServices.API)
                     .addConnectionCallbacks(locationConnectionCallbacks)
                     .addOnConnectionFailedListener(locationConnectionFailed)
@@ -650,16 +650,15 @@ public class BackgroundService extends Service {
 
             if (activityConnected) {
 //				activityClient.removeActivityUpdates(activityIntent);
-                ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(mGoogleApiClient,
-                        activityIntent);
+                ActivityRecognition.ActivityRecognitionApi.removeActivityUpdates(mGoogleApiClient, activityIntent);
 //				activityClient.disconnect();
             }
             if (locationConnected) {
 //				locationClient.removeLocationUpdates(locationListener);
 //				locationClient.disconnect();
-                LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, (com.google.android.gms.location.LocationListener) this);
+                LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, locationListener);
             }
-            if (!(locationConnected && activityConnected)) {
+            if ((!locationConnected) && (!activityConnected)) {
                 mGoogleApiClient.disconnect();
             }
         }
